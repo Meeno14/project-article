@@ -14,6 +14,13 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
       });
       return;
     }
+    //   // Password
+    if (req.body.password.length < 8) {
+      res.send({
+        message: "Failed! Password atleast 8 character long"
+      })
+      return;
+    }
     // Email
     User.findOne({
       where: {
