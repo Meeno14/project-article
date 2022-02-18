@@ -55,7 +55,7 @@ app.post("/api/crud/post", upload.single("image"), crud.postSite);
 app.delete("/api/crud/del/:id", crud.deleteSite);
 app.put("/api/crud/put/:id", upload.single("image"), crud.changeSite);
 
-// db.sequelize.sync({ force: true });
+db.sequelize.sync({ force: true });
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3001;
