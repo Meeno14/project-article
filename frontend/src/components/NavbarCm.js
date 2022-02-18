@@ -13,7 +13,6 @@ function NavCm() {
   const logout = () => {
     localStorage.clear();
     setUser(JSON.parse(localStorage.getItem("user")));
-    console.log(JSON.parse(localStorage.getItem("user")));
   };
   function CheckLog() {
     if (user) {
