@@ -59,13 +59,6 @@ function NavCm() {
       >
         <Container>
           <Navbar.Brand href="/">
-            <img
-              src={poto}
-              width="30"
-              height="30"
-              className="d-inline-block align-top rounded-circle"
-              alt="Rimticle logo"
-            />
             Rimticle
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
