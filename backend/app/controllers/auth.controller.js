@@ -11,7 +11,7 @@ exports.signup = (req, res) => {
     password: bcrypt.hashSync(req.body.password, 8),
     role: "user",
   }).then(() => {
-    res.send({ message: "User was registered successfully!" });
+    res.send({ success: true, message: "User was registered successfully!" });
   });
 };
 exports.signin = (req, res) => {
