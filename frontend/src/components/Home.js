@@ -7,7 +7,7 @@ export class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true,
+      user: {},
       sites: [],
     };
   }
@@ -16,6 +16,7 @@ export class Home extends Component {
     axios.get(API_URL + "crud/get").then((res) => {
       this.setState({ sites: res.data, loading: false });
     });
+    this.setState({ user: JSON.parse(localStorage.getItem("user")) })
   }
 
   render() {
@@ -43,6 +44,9 @@ export class Home extends Component {
                   {site.content}
                 </Card.Text>
                 <a href={"/article/" + site.id}><Button>Baca</Button></a>
+                {this.state.user && this.state.user.role === "admin" && (
+                  <a href={"/edit/" + site.id}><Button variant="warning">Edit</Button></a>
+                )}
               </Card.Body>
             </Card>
           </Col>
