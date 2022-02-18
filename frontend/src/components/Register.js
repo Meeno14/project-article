@@ -22,13 +22,11 @@ export default class Register extends Component {
         username: this.state.username,
         email: this.state.email,
         password: this.state.password,
-        role: "user",
       })
       .then((res, err) => {
-        if (err) {
-          console.log(err);
-        }
-        window.location.href = "/login";
+        if (res.data.success) {
+          window.location.href = "/login"
+        } else { alert(res.data.message) }
       });
   };
   render() {
