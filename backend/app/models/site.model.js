@@ -9,9 +9,6 @@ module.exports = (sequelize, Sequelize) => {
     content: {
       type: Sequelize.TEXT,
     },
-    path: {
-      type: Sequelize.TEXT,
-    },
   });
   return Site;
 };
