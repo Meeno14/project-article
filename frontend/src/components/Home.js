@@ -45,7 +45,7 @@ export class Home extends Component {
                 </Card.Text>
                 <a href={"/article/" + site.id}><Button>Baca</Button></a>
                 {this.state.user && this.state.user.role === "admin" && (
-                  <a href={"/edit/" + site.id}><Button variant="warning">Edit</Button></a>
+                  <a className="float-end" href={"/edit/" + site.id}><Button variant="warning">Edit</Button></a>
                 )}
               </Card.Body>
             </Card>
