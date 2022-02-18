@@ -13,9 +13,9 @@ exports.postSite = (req, res) => {
     title: req.body.title,
     image: req.file.filename,
     content: req.body.content,
-    path: req.body.title + Date.now(),
   }).then(() => {
     res.send({ message: "Successfully create a site!" });
+    window.location.href = "/"
   });
 };
 exports.deleteSite = (req, res) => {
